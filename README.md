@@ -17,5 +17,6 @@ The included batch script can be used to call the main script from a pseudo-exec
 shortcut program to the .bat file. Under "Properties", this shortcut can be changed to run as a minimized window, and 
 its icon can be changed to whatever is preferred (an .ico is also included).
 
+## UI Preview
 
 ![GUI_front](https://user-images.githubusercontent.com/29876155/231313086-bf1ee4d0-c460-4c2f-8a7a-b0c776a93ce7.png)
