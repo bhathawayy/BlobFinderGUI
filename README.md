@@ -1,6 +1,6 @@
-# Soup Project
+# Example Project
 
-Library for the Soup project blob detection and GUI.
+Library for the Soup project blob detection and GUI. Note, I have not included the img_processing script in order to protect our detection algorithm.
 
 ## Getting started
 
