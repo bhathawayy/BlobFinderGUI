@@ -18,8 +18,8 @@ VERSION = '1.2.0'
 here = os.path.abspath(os.path.dirname(__file__))
 
 # Required or optional package dependencies
-REQUIRED = ["opencv-contrib-python", "pandas", "matplotlib", "scipy", "PyQt5", "PySide6==6.5.0", "circle-fit",
-            "pylablib"]
+REQUIRED = ["PyQt5", "PySide6", "circle-fit", "matplotlib>=3.5.3", "opencv-contrib-python", "pandas>=1.3.5", "pylablib",
+            "scipy>=1.7.3"]
 try:
     with io.open(os.path.join(here, 'README.md'), encoding='utf-8') as f:
         long_description = '\n' + f.read()

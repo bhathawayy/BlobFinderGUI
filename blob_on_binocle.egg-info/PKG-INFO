@@ -1,0 +1,33 @@
+Metadata-Version: 2.1
+Name: blob-on-binocle
+Version: 1.2.0
+Summary: Module for control of the Blob on Binocle (BOB) System.
+Home-page: https://www.magicleap.com/
+Author: Brooke Hathaway
+Author-email: bhathaway@magicleap.com
+License: MIT
+Platform: UNKNOWN
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Requires-Python: >=3.7.0
+Description-Content-Type: text/markdown
+
+
+# Example Project
+
+Library for a blob detection GUI I created for various applications within my field. This GUI allows the user to 
+find a "blob" using their preferred camera (webcam by default). The "blobs" can then be mark and the deviation from 
+one detection to another can be recorded to a CSV.
+
+## Getting Started
+
+Navigate to this project's setup.py in your terminal then type:
+```python setup.py install```
+
+## Included Batch
+
+Run the included batch script to create a Desktop shortcut that will call the main functionality of this script.
+

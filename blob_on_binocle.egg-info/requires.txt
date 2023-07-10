@@ -1,0 +1,8 @@
+PyQt5
+PySide6
+circle-fit
+matplotlib>=3.5.3
+opencv-contrib-python
+pandas>=1.3.5
+pylablib
+scipy>=1.7.3
