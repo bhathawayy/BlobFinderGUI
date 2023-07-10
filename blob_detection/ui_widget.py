@@ -41,7 +41,7 @@ class Widget(QWidget):
         self.pixmap = None
         self.is_dialog_open = False
         self.is_closed = False
-        self.is_test = True
+        self.is_test = False  # set this to True if you do not want to load hardware
         self.is_circle_fit = False
         self.is_zeroed = False
         self.is_frozen = False
