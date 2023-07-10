@@ -1,7 +1,7 @@
 Metadata-Version: 2.1
-Name: blob-on-binocle
+Name: blob-detection
 Version: 1.2.0
-Summary: Module for control of the Blob on Binocle (BOB) System.
+Summary: Module for control of the Blob Detection GUI.
 Home-page: https://www.magicleap.com/
 Author: Brooke Hathaway
 Author-email: bhathaway@magicleap.com

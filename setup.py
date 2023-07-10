@@ -6,8 +6,8 @@ from shutil import rmtree
 from setuptools import find_packages, setup, Command
 
 # Metadata
-NAME = 'blob_on_binocle'
-DESCRIPTION = 'Module for control of the Blob on Binocle (BOB) System.'
+NAME = 'blob_detection'
+DESCRIPTION = 'Module for control of the Blob Detection GUI.'
 URL = 'https://www.magicleap.com/'
 EMAIL = 'bhathaway@magicleap.com'
 AUTHOR = 'Brooke Hathaway'
