@@ -33,4 +33,6 @@ configuration file (support\gui_settings.json).
 
 ## UI Preview
 
+*red represents the live detected blob, green represents the saved zero, and blue represents the measured point*
+
 ![preview.png](preview.png)
