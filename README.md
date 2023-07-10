@@ -33,4 +33,4 @@ configuration file (support\gui_settings.json).
 
 ## UI Preview
 
-
+![preview.png](preview.png)
