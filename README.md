@@ -32,7 +32,7 @@ camera. An image can be captured here as well and saved for later using the file
 tab, "Detection", can be used to control various settings related to how the blobs are detected. This includes, blob 
 size, the threshold value (used for edge detection), circularity (if circle fits are implemented), and useful overlays. 
 If these values are altered and the user would like to make these the default moving forward, the "Save to Config" 
-button can be used to implement this change to the configuration file (support\gui_settings.json).
+button can be used to implement this change to the config file.
 
 ## UI Preview
 
