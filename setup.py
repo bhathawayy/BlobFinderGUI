@@ -12,7 +12,7 @@ URL = 'https://www.magicleap.com/'
 EMAIL = 'bhathaway@magicleap.com'
 AUTHOR = 'Brooke Hathaway'
 REQUIRES_PYTHON = '>=3.7.0'
-VERSION = '1.2.0'
+VERSION = '1.1.0'
 
 # Paths to install files
 here = os.path.abspath(os.path.dirname(__file__))
