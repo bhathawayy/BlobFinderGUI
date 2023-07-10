@@ -6,8 +6,8 @@ one detection to another can be recorded to a CSV.
 
 ## Getting Started
 
-Navigate to this project's setup.py in your terminal then type:
-```python setup.py install```
+Using the command terminal type:
+```pip install <path to tar file>\blob_detection.tar.gz```
 
 ## Included Batch
 

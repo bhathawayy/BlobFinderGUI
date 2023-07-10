@@ -26,7 +26,7 @@ class Widget(QWidget):
         self.threadpool = QtCore.QThreadPool()
         self.main_thread = QtCore.QThread.currentThread()
 
-        # Variables ------------------------------------------------------------------------------------------------- #
+        # Local Variables ------------------------------------------------------------------------------------------- #
         try:
             self.settings_path = os.path.join(os.getcwd(), "blob_detection\\support\\gui_settings.json")
             with open(self.settings_path) as f:
@@ -41,7 +41,7 @@ class Widget(QWidget):
         self.pixmap = None
         self.is_dialog_open = False
         self.is_closed = False
-        self.is_test = False
+        self.is_test = True
         self.is_circle_fit = False
         self.is_zeroed = False
         self.is_frozen = False
@@ -121,6 +121,11 @@ class Widget(QWidget):
         super(Widget, self).wheelEvent(event)
 
     def change_exposure(self, spin_change=False, just_label=False):
+        """
+        Change exposure settings on camera.
+        :param spin_change: (bool) Was this change initiated by the spin box?
+        :param just_label: (bool) Was this change initiated by the slider?
+        """
         if spin_change:
             new_value = int(self.ui.camera_exposure_spin.value())
             self.ui.camera_exposure_slider.setValue(new_value)
@@ -132,6 +137,11 @@ class Widget(QWidget):
             self.camera.set_exposure(new_value=new_value)
 
     def change_gamma(self, spin_change=False, just_label=False):
+        """
+        Change gamma settings on camera.
+        :param spin_change: (bool) Was this change initiated by the spin box?
+        :param just_label: (bool) Was this change initiated by the slider?
+        """
         if spin_change:
             new_value = float(self.ui.camera_gamma_spin.value())
             self.ui.camera_gamma_slider.setValue(new_value * 10)
@@ -153,7 +163,7 @@ class Widget(QWidget):
 
     def click_capture(self):
         """
-        Action for clicking the CAPTURE button.
+        Action for clicking the 'Capture' button.
         """
         if self.camera is not None:
             # Check folder path
@@ -176,6 +186,9 @@ class Widget(QWidget):
             self.thread_save_image(image_path, self.raw_frame)
 
     def click_circle_fit(self):
+        """
+        Action for clicking the 'Circle fit' toggle.
+        """
         if self.ui.settings_circle_fit_check.isChecked():
             self.is_circle_fit = True
             self.ui.settings_circularity_min_spin.setEnabled(True)
@@ -186,6 +199,9 @@ class Widget(QWidget):
             self.ui.settings_circularity_max_spin.setEnabled(False)
 
     def click_freeze(self):
+        """
+        Action for clicking the 'Freeze' button.
+        """
         if self.is_frozen:
             is_frozen = False
             self.ui.measure_freeze_button.setText("Freeze")
@@ -196,6 +212,9 @@ class Widget(QWidget):
         self.is_frozen = is_frozen
 
     def click_save(self):
+        """
+        Action for clicking the 'Save' button.
+        """
         # Disable button to avoid repeat conflict
         self.ui.measure_save_button.setEnabled(False)
 
@@ -231,6 +250,9 @@ class Widget(QWidget):
         self.ui.measure_save_button.setEnabled(True)
 
     def click_save_config(self):
+        """
+        Action for clicking the 'Save to Config' button.
+        """
         contour_limits = [self.ui.settings_contour_limits_min_spin.value(),
                           self.ui.settings_contour_limits_max_spin.value()]
         threshold = self.ui.settings_threshold_spin.value()
@@ -251,16 +273,19 @@ class Widget(QWidget):
                 json.dump(self.json_settings, f, indent=4)
 
     def click_zero(self):
+        """
+        Action for clicking the 'Set Zero' button.
+        """
         self.is_zeroed = True
         self.ui.measure_zero_button.setEnabled(False)
 
     def dialog_prompt(self, message, button=0x0, level=0):
         """
-        Ctypes dialog box to prompt or inform the user.
+        Display dialog box to prompt or inform the user.
         :param button: (hex) Options: 0x0 = OK, 0x01 = OK/CANCEL, 0x03 = YES/NO/CANCEL, 0x04 = YES/NO
         :param message: (str) Message to display in box.
         :param level: (int) 0 = prompt, 1 = warning, 2 = error
-        :return: (bool) answer
+        :return: (int) Response from user.
         """
         mb_sys_modal = 0x00001000
         message = bytes(message, 'utf-8')
@@ -280,11 +305,14 @@ class Widget(QWidget):
         return dialog_answer
 
     def do_pass(self):
+        """
+        Do nothing (for debugging).
+        """
         pass
 
     def full_screen(self):
         """
-        Full screen image or image frame on streaming window.
+        Full screen the image on the streaming window.
         """
         rect = QtCore.QRectF(self.pixmap.rect())
         if not rect.isNull():
@@ -298,6 +326,9 @@ class Widget(QWidget):
             self.zoom = 0
 
     def make_params_dict(self):
+        """
+        Make a parameter dictionary for CSV saving.
+        """
         now = datetime.now()
         input_params = {
             "Measurement": 0,
@@ -332,6 +363,9 @@ class Widget(QWidget):
         return input_params
 
     def set_defaults(self):
+        """
+        Set defaults on GUI based on settings json.
+        """
         # Other
         self.armin_per_pxl = self.json_settings["Camera"]["Arcmin/pxl"]
         self.pxl_size_mm = self.json_settings["Camera"]["Pixel Size mm"]
