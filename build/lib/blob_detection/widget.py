@@ -9,7 +9,7 @@ from datetime import datetime
 from PySide6.QtGui import (QImage, QPixmap, QCloseEvent)
 from PySide6.QtWidgets import (QApplication, QWidget, QFileDialog, QGraphicsScene, QGraphicsPixmapItem)
 from datetime import datetime
-from blob_detection.ui_form import Ui_Widget
+from blob_detection.ui_form_sep import Ui_Widget
 
 matplotlib.use('tkagg')
 argParser = argparse.ArgumentParser()
