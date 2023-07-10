@@ -1,9 +1,7 @@
 {
     "Version": "1.2.0",
     "Camera": {
-        "ID LR": [
-            2
-        ],
+        "ID": 2,
         "Sensor": "AmScope",
         "Lens": "NA",
         "Pixel Size mm": 0.00155,

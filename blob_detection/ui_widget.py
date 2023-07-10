@@ -369,7 +369,7 @@ class Widget(QWidget):
         # Other
         self.armin_per_pxl = self.json_settings["Camera"]["Arcmin/pxl"]
         self.pxl_size_mm = self.json_settings["Camera"]["Pixel Size mm"]
-        device_id = self.json_settings["Camera"]["ID LR"][self.camera_num]
+        device_id = self.json_settings["Camera"]["ID"]
         self.folder_path = self.json_settings["Save Path"]
         self.blob_kpis = {"zero": (0, 0), "detected": (0, 0), "delta": (0, 0), "saturation": 0, "level": ""}
 
@@ -388,11 +388,7 @@ class Widget(QWidget):
         if self.ui.settings_circle_fit_check.isChecked():
             self.ui.settings_circularity_min_spin.setEnabled(True)
             self.ui.settings_circularity_max_spin.setEnabled(True)
-        if self.json_settings["Camera"]["ID LR"].index(device_id) == 0:
-            side = "LEFT"
-        else:
-            side = "RIGHT"
-        self.ui.stream_label.setText("Camera Stream %s" % side)
+        self.ui.stream_label.setText("Camera Stream %i" % device_id)
 
     def thread_connect_camera(self):
         """
