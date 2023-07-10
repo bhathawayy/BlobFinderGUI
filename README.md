@@ -1,22 +1,14 @@
 # Example Project
 
-Library for the Soup project blob detection and GUI. Note, I have not included the img_processing script in order to protect our detection algorithm.
+Library for a blob detection GUI I created for various applications within my field. This GUI allows the user to 
+find a "blob" using their preferred camera (webcam by default). The "blobs" can then be mark and the deviation from 
+one detection to another can be recorded to a CSV.
 
-## Getting started
+## Getting Started
 
-```pip install support\arena_api-2.3.3-py3-none-any.whl```
-
-Next, use the setup.py to set up your environment. This can be done either through your IDE or with the following:
+Navigate to this project's setup.py in your terminal then type:
 ```python setup.py install```
 
-Finally, move the "lab_instruments" folder into your environment's \Lib\site-packages folder.
+## Included Batch
 
-## Included batch script
-
-The included batch script can be used to call the main script from a pseudo-executable. This can be done by creating a 
-shortcut program to the .bat file. Under "Properties", this shortcut can be changed to run as a minimized window, and 
-its icon can be changed to whatever is preferred (an .ico is also included).
-
-## UI Preview
-
-![GUI_front](https://user-images.githubusercontent.com/29876155/231313086-bf1ee4d0-c460-4c2f-8a7a-b0c776a93ce7.png)
+Run the included batch script to create a Desktop shortcut that will call the main functionality of this script.

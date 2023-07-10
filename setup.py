@@ -6,27 +6,20 @@ from shutil import rmtree
 from setuptools import find_packages, setup, Command
 
 # Metadata
-NAME = 'Soup'
-DESCRIPTION = 'Repo for managing Soup scripts.'
-URL = ''
+NAME = 'blob_on_binocle'
+DESCRIPTION = 'Module for control of the Blob on Binocle (BOB) System.'
+URL = 'https://www.magicleap.com/'
 EMAIL = 'bhathaway@magicleap.com'
 AUTHOR = 'Brooke Hathaway'
 REQUIRES_PYTHON = '>=3.7.0'
-VERSION = '1.0.0'
+VERSION = '1.2.0'
 
-# Install local packages (because the companies do not publicize them)
-base_path = os.path.join(os.getcwd(), "support")
-files = [os.path.join(base_path, f) for f in os.listdir(base_path) if
-         f.endswith((".whl", ".tar.gz", ".zip"))]
-for pkg in files:
-    os.system(("pip install %s" % pkg))
+# Paths to install files
+here = os.path.abspath(os.path.dirname(__file__))
 
 # Required or optional package dependencies
-REQUIRED = ["PySide6==6.4.0", "opencv-contrib-python==4.0.1.24", "Pillow", "matplotlib", "numpy", "scipy", "circle-fit",
-            "pipython", "qimage2ndarray"]
-EXTRAS = {}
-
-here = os.path.abspath(os.path.dirname(__file__))
+REQUIRED = ["opencv-contrib-python", "pandas", "matplotlib", "scipy", "PyQt5", "PySide6==6.5.0", "circle-fit",
+            "pylablib"]
 try:
     with io.open(os.path.join(here, 'README.md'), encoding='utf-8') as f:
         long_description = '\n' + f.read()
@@ -91,10 +84,9 @@ setup(
     python_requires=REQUIRES_PYTHON,
     url=URL,
     packages=find_packages(exclude=["tests", "*.tests", "*.tests.*", "tests.*"]),
-    # If your package is a single module, use this instead of 'packages':
-    # py_modules=['mypackage'],
+    # dependency_links=[ids_path, ids_ipl_path],
+    # data_files=[("tetons/support")],
     install_requires=REQUIRED,
-    extras_require=EXTRAS,
     include_package_data=True,
     license='MIT',
     classifiers=[
@@ -102,7 +94,6 @@ setup(
         'License :: OSI Approved :: MIT License',
         'Programming Language :: Python',
         'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: Implementation :: CPython',
         'Programming Language :: Python :: Implementation :: PyPy'
     ],

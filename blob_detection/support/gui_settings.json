@@ -1,0 +1,30 @@
+{
+    "Version": "1.2.0",
+    "Camera": {
+        "ID LR": [
+            2
+        ],
+        "Sensor": "AmScope",
+        "Lens": "NA",
+        "Pixel Size mm": 0.00155,
+        "Exposure us": 200000,
+        "Gamma": 1.0,
+        "Arcmin/pxl": 0.023148
+    },
+    "Save Path": "C:/Users/lab/Desktop",
+    "Detection": {
+        "Threshold": 150,
+        "Contours": [
+            250,
+            1500
+        ],
+        "Poly Fit": 1,
+        "Gaussian": 9,
+        "Feature Size": 4,
+        "Circularity": [
+            0.6,
+            1.2
+        ],
+        "Circle Fit": 0
+    }
+}

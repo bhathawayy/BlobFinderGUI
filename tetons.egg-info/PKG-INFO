@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: tetons
+Version: 1.0.0
+Summary: Module for control of Blob Detection System.
+Home-page: https://www.magicleap.com/
+Author: Brooke Hathaway
+Author-email: bhathaway@magicleap.com
+License: MIT
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Requires-Python: >=3.6.0
+Description-Content-Type: text/markdown
+
+Module for control of Blob Detection System.
